@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "codereview"
+version = "0.1.0"
+description = "A LLM-powered code review tool."
+authors = ["Andrei Assa <andrei.assa@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.1.7"
+requests = "^2.31.0"
+langchain = {extras = ["openai"], version = "^0.0.335"}
+pydantic = "^2.5.0"
+sqlalchemy = "<2.0.0"
+pyyaml = "^6.0.1"
+
+[tool.poetry.scripts]
+codereview = "codereview.main:cli"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
